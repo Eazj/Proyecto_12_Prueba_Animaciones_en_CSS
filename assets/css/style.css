@@ -18,6 +18,7 @@ body{
 .nav{
     grid-area: navBar;
     background-color: springgreen;
+    position:fixed;
 }
 .logo{
     height: 5rem;
@@ -37,7 +38,6 @@ body{
 /*Main*/
 .main{
     grid-area: main;
-    background-color: red;
 }
 .productos{
     display: flex;
@@ -122,5 +122,146 @@ body{
     font-size: 1.4rem;
 }
 @media (min-width:1024px) {
-    
+    body{
+        display: grid;
+        height: 100vh;
+        grid-template-areas: "navBar main"
+                             "navBar main"
+                             "footer footer";
+        grid-template-columns: 20vw 1fr;
+        grid-template-rows: 15vh auto 15vh;
+    }
+    .nav{
+        grid-area: navBar;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: springgreen;
+        position:fixed;
+        width: 20vw;
+        height: 100vh;
+    }
+    .logo{
+        height: 5rem;
+        width: 9rem;
+        margin-left: 2rem;
+    }
+    .logo img{
+        height: 100%;
+        width: 100;
+    }
+    .listas{
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        grid-area: main;
+    }
+    .productos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .barra-seccion{
+        background-color: darkgreen;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        height: 3rem;
+        width: 100%;
+        font-weight: 300;
+        padding-left: 2rem;
+    }
+    .container-icono{
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    .container-icono img{
+        height: 100%;
+        width: 100%;
+    }
+    .container-tarjeta{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+        flex-wrap: wrap;
+    }
+    .tarjeta{
+        display: flex;
+        flex-direction: column;
+        height: 29em;
+        width: 14em;
+        background-color: aqua;
+        border: 1px solid #ccc;
+        transition: all 0.5s ease;
+    }
+    .tarjeta:hover{
+        height: 30em;
+        width: 16em;
+        background-color: aqua;
+        animation: borde-rojo 1s linear infinite
+    }
+    .container-image{
+        height: 65%;
+    }
+    .container-image img{
+        height: 100%;
+        width: 100%;
+    }
+    .container-texto{
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        margin: 0.4em;
+        padding-top: 1rem;
+    }
+    .boton{
+        padding-top: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+    .boton button{
+        height: 2.5em;
+        width: 9em;
+        border-radius: 0.5em;
+    }
+    .boton-ver-mas{
+        display: none;
+    }
+    .footer{
+        grid-area: footer;
+        background-color: blueviolet;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .direccion{
+        display: flex;
+        gap: 0.5rem;
+    }
+    .redes-sociales{
+        letter-spacing: 0.5rem;
+        margin: 1.5vh;
+    }
+    .redes-sociales i{
+        font-size: 1.4rem;
+    }
+    @keyframes borde-rojo {
+        0% {
+          border-color: #ccc;
+        }
+        50% {
+          border-color: red;
+        }
+        100% {
+          border-color: #ccc;
+        }
+      }
 }
